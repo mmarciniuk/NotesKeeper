@@ -1,14 +1,14 @@
-package pl.mm.noteKeeper.dao;
+package pl.mm.notesKeeper.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.*;
 import java.util.Optional;
 import java.util.UUID;
 
-@Repository
+@NoRepositoryBean
 public abstract class BaseInfoRepositoryImpl<T, ID> implements BaseInfoRepository<T, ID> {
 
     @Autowired

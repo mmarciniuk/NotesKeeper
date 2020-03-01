@@ -1,7 +1,6 @@
-package pl.mm.noteKeeper.model;
+package pl.mm.notesKeeper.model;
 
 import lombok.*;
-import net.bytebuddy.build.HashCodeAndEqualsPlugin;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.Length;

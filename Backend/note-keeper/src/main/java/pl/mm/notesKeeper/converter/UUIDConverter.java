@@ -1,4 +1,4 @@
-package pl.mm.noteKeeper.converter;
+package pl.mm.notesKeeper.converter;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

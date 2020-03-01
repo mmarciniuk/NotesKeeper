@@ -1,9 +1,9 @@
-package pl.mm.noteKeeper.model;
+package pl.mm.notesKeeper.model;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import pl.mm.noteKeeper.converter.UUIDConverter;
+import pl.mm.notesKeeper.converter.UUIDConverter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;

@@ -1,15 +1,14 @@
-package pl.mm.noteKeeper.dao;
+package pl.mm.notesKeeper.dao;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import pl.mm.noteKeeper.model.User;
-import pl.mm.noteKeeper.testDataBuilder.ModelUsersTestDataBuilder;
+import pl.mm.notesKeeper.BaseApplicationTest;
+import pl.mm.notesKeeper.model.User;
+import pl.mm.notesKeeper.testDataBuilder.ModelUsersTestDataBuilder;
 
-@SpringBootTest
-public class UserRepositoryTest {
+public class UserRepositoryTest extends BaseApplicationTest {
 
     @Autowired
     private UserRepository userRepository;

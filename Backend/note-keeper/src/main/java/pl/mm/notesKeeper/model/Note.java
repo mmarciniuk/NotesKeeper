@@ -1,4 +1,4 @@
-package pl.mm.noteKeeper.model;
+package pl.mm.notesKeeper.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package pl.mm.noteKeeper.dao;
+package pl.mm.notesKeeper.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;

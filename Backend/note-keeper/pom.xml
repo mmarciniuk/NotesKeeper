@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.mm</groupId>
-	<artifactId>note-keeper</artifactId>
+	<artifactId>notes-keeper</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>note-keeper</name>
 	<description>Demo project for Spring Boot</description>
@@ -63,6 +63,12 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
     </dependencies>
 

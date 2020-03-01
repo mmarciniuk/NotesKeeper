@@ -1,8 +1,8 @@
 package pl.mm.noteKeeper.dao;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 import pl.mm.noteKeeper.model.User;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+@Repository
+public interface UserRepository extends BaseInfoRepository<User, Long> {
 }

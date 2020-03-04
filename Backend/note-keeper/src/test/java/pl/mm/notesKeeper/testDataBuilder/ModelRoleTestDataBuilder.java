@@ -9,7 +9,6 @@ public class ModelRoleTestDataBuilder {
     public static Role adminRole() {
         Role role = new Role();
 
-        role.setId(1);
         role.setUuid(UUID.randomUUID());
         role.setRoleName("ADMIN");
 

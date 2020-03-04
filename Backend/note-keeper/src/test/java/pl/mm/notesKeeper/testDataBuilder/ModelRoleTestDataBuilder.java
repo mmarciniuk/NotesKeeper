@@ -15,4 +15,13 @@ public class ModelRoleTestDataBuilder {
         return role;
     }
 
+    public static Role userRole() {
+        Role role = new Role();
+
+        role.setUuid(UUID.randomUUID());
+        role.setRoleName("ADMIN");
+
+        return role;
+    }
+
 }

@@ -4,8 +4,8 @@ import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class NoteDto extends BaseInfoDto {
 

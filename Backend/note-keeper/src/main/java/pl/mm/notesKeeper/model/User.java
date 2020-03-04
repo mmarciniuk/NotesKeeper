@@ -42,6 +42,7 @@ public class User extends BaseInfo {
     @Column(name = "AddressEmail", nullable = false, length = 100)
     private String addressEmail;
 
+    @NotBlank
     @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany
     @JoinTable(name = "user_roles",

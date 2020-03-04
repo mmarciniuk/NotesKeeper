@@ -6,9 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import pl.mm.notesKeeper.BaseApplicationTest;
 import pl.mm.notesKeeper.model.Note;
+import pl.mm.notesKeeper.model.Role;
 import pl.mm.notesKeeper.model.User;
 import pl.mm.notesKeeper.testDataBuilder.ModelNoteTestDataBuilder;
+import pl.mm.notesKeeper.testDataBuilder.ModelRoleTestDataBuilder;
 import pl.mm.notesKeeper.testDataBuilder.ModelUsersTestDataBuilder;
+
+import java.util.ArrayList;
 
 public class NoteRepositoryTest extends BaseApplicationTest {
 
@@ -18,16 +22,27 @@ public class NoteRepositoryTest extends BaseApplicationTest {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private RoleRepository roleRepository;
+
     private Note noteToBeDeleted;
     private User userToBeDeleted;
 
     @Test
     public void testAddNote() {
         //given
-        Note note = ModelNoteTestDataBuilder.createStandardNote();
+        Role userRole = ModelRoleTestDataBuilder.userRole();
+        userRole = roleRepository.findByRoleName(userRole.getRoleName()).orElse(null);
+
+
         User ownerOfNote = ModelUsersTestDataBuilder.standardUser();
+        ownerOfNote.setRoles(new ArrayList<>());
+        ownerOfNote.getRoles().add(userRole);
+
         ownerOfNote = userRepository.save(ownerOfNote);
         userToBeDeleted = ownerOfNote;
+
+        Note note = ModelNoteTestDataBuilder.createStandardNote();
         note.setOwnerOfNoteId(ownerOfNote);
 
         //when

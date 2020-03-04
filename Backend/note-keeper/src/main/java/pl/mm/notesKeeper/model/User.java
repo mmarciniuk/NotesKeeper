@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import java.util.Collection;
 
@@ -42,7 +43,7 @@ public class User extends BaseInfo {
     @Column(name = "AddressEmail", nullable = false, length = 100)
     private String addressEmail;
 
-    @NotBlank
+    @NotEmpty
     @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany
     @JoinTable(name = "user_roles",

@@ -1,10 +1,12 @@
 package pl.mm.notesKeeper.dto;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class NoteDto extends BaseInfoDto {
 
     private String title;

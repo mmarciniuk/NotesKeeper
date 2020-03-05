@@ -6,8 +6,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Request {
+public class Request<T> {
 
-    private Object payload;
+    private T request;
 
 }

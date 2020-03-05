@@ -23,14 +23,14 @@ public class UserRestController extends RestControllerBase {
     private UserService userService;
 
     @PostMapping(Mappings.REGISTER)
-    public Response createUser(@RequestBody Request request) {
+    public Response createUser(@RequestBody Request<UserDto> request) {
         return userService.createUser(request);
     }
 
     @PostMapping("/create2")
     public Response createUser2(@RequestBody UserDto request) {
         return Response.builder()
-                .payload(request)
+                .response(request)
                 .build();
     }
 

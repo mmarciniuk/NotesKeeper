@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Response {
 
-    private Object payload;
+    private Object response;
 
 }

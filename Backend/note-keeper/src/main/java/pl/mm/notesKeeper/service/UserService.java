@@ -19,6 +19,7 @@ import pl.mm.notesKeeper.model.User;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Transactional
@@ -36,9 +37,11 @@ public class UserService extends BaseInfoService<User, Long> implements UserDeta
         super(repository);
     }
 
-    public Response createUser(Request request) {
-        UserDto userDto = (UserDto) request.getPayload();
+    public Response createUser(Request<UserDto> request) {
+        UserDto userDto = request.getRequest();
         User user = modelMapper.map(userDto, User.class);
+
+        user.setUuid(UUID.randomUUID());
         user.setRoles(Collections.singletonList(roleRepository.findByRoleName("USER").orElse(null)));
 
         user = repository.save(user);
@@ -46,7 +49,7 @@ public class UserService extends BaseInfoService<User, Long> implements UserDeta
 
         return Response
                 .builder()
-                .payload("User " + user.getUserName() + " created successfully")
+                .response("User " + user.getUserName() + " created successfully")
                 .build();
     }
 

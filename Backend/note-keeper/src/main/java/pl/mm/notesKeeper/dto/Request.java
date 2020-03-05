@@ -1,7 +1,10 @@
 package pl.mm.notesKeeper.dto;
 
-import lombok.Builder;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Request {
 

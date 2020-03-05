@@ -1,8 +1,8 @@
 package pl.mm.notesKeeper.service;
 
+import org.springframework.transaction.annotation.Transactional;
 import pl.mm.notesKeeper.dto.Response;
 
-import javax.transaction.Transactional;
 import java.util.UUID;
 
 @Transactional

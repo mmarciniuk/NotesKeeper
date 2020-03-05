@@ -10,16 +10,19 @@ import pl.mm.notesKeeper.dto.Response;
 import pl.mm.notesKeeper.dto.UserDto;
 import pl.mm.notesKeeper.service.UserService;
 
-@RequestMapping(UserRestController.USER_MAPPING)
+@RequestMapping(UserRestController.Mappings.BASE_MAPPING)
 @RestController
 public class UserRestController extends RestControllerBase {
 
-    public static final String USER_MAPPING = BASE_MAPPING + "/user";
+    public static class Mappings {
+        public static final String BASE_MAPPING = RestControllerBase.Mappings.BASE_MAPPING + "/user";
+        public static final String REGISTER = "/register";
+    }
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/create")
+    @PostMapping(Mappings.REGISTER)
     public Response createUser(@RequestBody Request request) {
         return userService.createUser(request);
     }
